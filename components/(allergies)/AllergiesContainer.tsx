@@ -1,19 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import NavigationButton from "../(navigation)/NavigationButton";
 import allergensData from "../../data/allergens.json";
 import { Feather } from "@expo/vector-icons";
 import { Allergen } from "../../utils/types";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const ALLERGENS_STORAGE_KEY = "allergensData";
 
 const AllergiesContainer = () => {
     const [allergens, setAllergens] = useState(allergensData.allergens);
 
-    const toggleAllergy = (index: number) => {
-      const newAllergens = [...allergens];
-      newAllergens[index].allergic = !newAllergens[index].allergic;
-      setAllergens(newAllergens);
-    };
 
+    useEffect(() => {
+        const loadAllergens = async () => {
+          try {
+            const storedAllergens = await AsyncStorage.getItem(ALLERGENS_STORAGE_KEY);
+            if (storedAllergens) {
+              setAllergens(JSON.parse(storedAllergens));
+            }
+          } catch (error) {
+            console.error("Failed to load allergens from storage", error);
+          }
+        };
+    
+        loadAllergens();
+      }, []);
+    
+      const toggleAllergy = async (index: number) => {
+        const newAllergens = [...allergens];
+        newAllergens[index].allergic = !newAllergens[index].allergic;
+        setAllergens(newAllergens);
+    
+        try {
+          await AsyncStorage.setItem(ALLERGENS_STORAGE_KEY, JSON.stringify(newAllergens));
+        } catch (error) {
+          console.error("Failed to save allergens to storage", error);
+        }
+      };
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {allergens.map((allergen, index) => (
