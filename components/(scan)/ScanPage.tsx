@@ -3,6 +3,7 @@ import { View, Text, Button, StyleSheet } from "react-native";
 import { CameraView, Camera } from "expo-camera";
 import NavigationButton from "../(navigation)/NavigationButton";
 import ScanButton from "./ScanButton";
+import ScanPopup from "./ScanPopup";
 
 type ScanProps = {
     type: string;
@@ -12,6 +13,7 @@ type ScanProps = {
 const ScanPage = () => {
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
   const [scanned, setScanned] = useState(true);
+  const [ean, setEan] = useState<string | null>(null)
 
   useEffect(() => {
     const getCameraPermissions = async () => {
@@ -24,8 +26,10 @@ const ScanPage = () => {
 
   const handleBarCodeScanned = ({ type, data }: ScanProps) => {
     console.log(typeof data);
+    setEan(data)
     setScanned(true);
     alert(`${type}:${data}`);
+
   };
 
   if (hasPermission === null) {
@@ -45,7 +49,7 @@ const ScanPage = () => {
         style={StyleSheet.absoluteFillObject}
       />
       <View style={styles.buttonContainer}>
-
+        <ScanPopup ean={ean} />
       {scanned? <ScanButton buttonText="Skan" action={() => setScanned(false)}/> : <ScanButton buttonText="Skanner..." action={() => setScanned(true)}/>}
       <NavigationButton buttonText="Returner" screenName="Main"/>
       </View>

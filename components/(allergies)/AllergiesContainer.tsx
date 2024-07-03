@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Dimensions } from "react-native";
 import NavigationButton from "../(navigation)/NavigationButton";
 import allergensData from "../../data/allergens.json";
 import { Feather } from "@expo/vector-icons";
@@ -7,6 +7,8 @@ import { Allergen } from "../../utils/types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ALLERGENS_STORAGE_KEY = "allergensData";
+const { height } = Dimensions.get("window");
+
 
 const AllergiesContainer = () => {
     const [allergens, setAllergens] = useState(allergensData.allergens);
@@ -62,6 +64,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 40,
+    height: height * 0.5,
+    overflow: "hidden" 
   },
   box: {
     borderWidth: 1,
