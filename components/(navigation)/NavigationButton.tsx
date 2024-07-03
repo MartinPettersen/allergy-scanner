@@ -38,17 +38,10 @@ const styles = StyleSheet.create({
     color: "#15344c",
     fontSize: 24,
   },
-  linkWrapper: {
-    alignSelf: "flex-start",
-  },
-  linkText: {
-    color: "#02a9f7",
-    fontSize: 24,
-  },
   button: {
     paddingHorizontal: 50,
     paddingVertical: 20,
-    marginTop: 70,
+    marginTop: 30,
     borderRadius: 15,
   },
   buttonText: {

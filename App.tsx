@@ -4,11 +4,12 @@ import { CameraView, Camera } from "expo-camera";
 import ScanScreen from "./screens/ScanScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import MainScreen from "./screens/MainScreen";
+import AllergiesScreen from "./screens/AllergiesScreen";
 
 export default function App() {
   
   return (
-    <MainScreen />
+    <AllergiesScreen />
   );
 }
 

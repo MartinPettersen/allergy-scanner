@@ -2,7 +2,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { Linking } from "react-native";
-import NavigationButton from "../components/NavigationButton";
+import NavigationButton from "../components/(navigation)/NavigationButton";
 
 const MainScreen = () => {
 
