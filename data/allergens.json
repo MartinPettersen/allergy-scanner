@@ -1,0 +1,74 @@
+{
+    "allergens": [
+            {
+                "code": "blotdyr",
+                "display_name": "Bl\u00f8tdyr",
+                "allergic": false
+            },
+            {
+                "code": "egg",
+                "display_name": "Egg",
+                "allergic": false
+            },
+            {
+                "code": "fisk",
+                "display_name": "Fisk",
+                "allergic": false
+            },
+            {
+                "code": "gluten",
+                "display_name": "Gluten",
+                "allergic": false
+            },
+            {
+                "code": "lupiner",
+                "display_name": "Lupiner",
+                "allergic": false
+            },
+            {
+                "code": "melk",
+                "display_name": "Melk",
+                "allergic": false
+            },
+            {
+                "code": "notter",
+                "display_name": "N\u00f8tter",
+                "allergic": false
+            },
+            {
+                "code": "peanotter",
+                "display_name": "Pean\u00f8tter",
+                "allergic": false
+            },
+            {
+                "code": "selleri",
+                "display_name": "Selleri",
+                "allergic": false
+            },
+            {
+                "code": "sennep",
+                "display_name": "Sennep",
+                "allergic": false
+            },
+            {
+                "code": "sesam",
+                "display_name": "Sesam",
+                "allergic": false
+            },
+            {
+                "code": "skalldyr",
+                "display_name": "Skalldyr",
+                "allergic": false
+            },
+            {
+                "code": "soya",
+                "display_name": "Soya",
+                "allergic": false
+            },
+            {
+                "code": "sulfitt",
+                "display_name": "Sulfitt",
+                "allergic": false
+            }
+        ]
+}
