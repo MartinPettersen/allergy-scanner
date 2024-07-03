@@ -5,5 +5,9 @@ export type Allergen = {
 }
 
 export type RootStackParamList = {
-    
-}
+    Welcome: undefined;
+    Main: undefined;
+    Allergies: undefined;
+    Scan: undefined;
+
+};

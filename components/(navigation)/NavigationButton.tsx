@@ -12,7 +12,7 @@ import { RootStackParamList } from "../../utils/types";
 
 type Props = {
   buttonText: string;
-  screenName: string;
+  screenName: keyof RootStackParamList;
 };
 
 const { width } = Dimensions.get("window");
