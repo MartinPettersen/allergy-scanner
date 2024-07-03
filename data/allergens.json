@@ -1,4 +1,5 @@
 {
+    "default": true,
     "allergens": [
             {
                 "code": "blotdyr",
