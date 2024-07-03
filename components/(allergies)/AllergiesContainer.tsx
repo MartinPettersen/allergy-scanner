@@ -51,7 +51,7 @@ const AllergiesContainer = () => {
             />
         </TouchableOpacity>
       ))}
-      <NavigationButton buttonText="Ferdig" />
+      <NavigationButton buttonText="Ferdig" screenName="Main"/>
     </ScrollView>
   );
 };

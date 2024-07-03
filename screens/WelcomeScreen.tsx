@@ -28,7 +28,7 @@ const WelcomeScreen = () => {
         </TouchableOpacity>
         . Bruk av denne appen er på eget ansvar.
       </Text>
-      <NavigationButton buttonText="Godta"/>
+      <NavigationButton buttonText="Godta" screenName="Main"/>
 
     </View>
   );

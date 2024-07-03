@@ -1,7 +1,5 @@
-import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import { Linking } from "react-native";
+import { View, StyleSheet } from "react-native";
 import NavigationButton from "../components/(navigation)/NavigationButton";
 
 const MainScreen = () => {
@@ -9,11 +7,8 @@ const MainScreen = () => {
 
   return (
     <View style={styles.container}>
-
-        <NavigationButton buttonText="Velg Allergier"/>
-        <NavigationButton buttonText="Skan"/>
-
-
+        <NavigationButton buttonText="Velg Allergier" screenName="Allergies"/>
+        <NavigationButton buttonText="Skan" screenName="Scan"/>
     </View>
   );
 };

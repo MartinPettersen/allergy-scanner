@@ -3,3 +3,7 @@ export type Allergen = {
     display_name: string;
     allergic: boolean;
 }
+
+export type RootStackParamList = {
+    
+}

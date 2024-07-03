@@ -1,3 +1,4 @@
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
@@ -7,17 +8,22 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
+import { RootStackParamList } from "../../utils/types";
 
 type Props = {
   buttonText: string;
+  screenName: string;
 };
 
 const { width } = Dimensions.get("window");
 
-const NavigationButton = ({ buttonText }: Props) => {
+const NavigationButton = ({ buttonText, screenName }: Props) => {
+
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.shadow}>
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate(screenName)}>
         <LinearGradient
           colors={["#039FE7", "#1DC1F6"]}
           start={{ x: 0, y: 0.5 }}
