@@ -25,7 +25,6 @@ const ScanPage = () => {
   }, []);
 
   const handleBarCodeScanned = ({ type, data }: ScanProps) => {
-    console.log(typeof data);
     setEan(data)
     setScanned(true);
     alert(`${type}:${data}`);
